@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Young Innovators Lesson Plans</title>
+    <style>
+        :root {
+            --primary-color: #00adb5;
+            --background-color: #121212;
+            --font-color: #ffffff;
+        }
+
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--font-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styling */
+        .navbar {
+            padding: 1rem 2rem;
+            background-color: #1f1f1f;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar .logo a {
+            color: var(--font-color);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .navbar .logo a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-bar {
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            padding: 0.5rem;
+            background: transparent;
+            color: var(--font-color);
+            font-size: 1rem;
+        }
+
+        .search-bar::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Main Content */
+        .dashboard {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .dashboard h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* Group Styling */
+        .lesson-group {
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .lesson-group h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--font-color);
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Lesson Plan Buttons */
+        .lesson-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 1rem 1.5rem;
+            background-color: #1f1f1f;
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .button:hover {
+            background-color: var(--primary-color);
+            color: var(--font-color);
+            transform: scale(1.05);
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        .button[title]::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: var(--font-color);
+            padding: 0.3rem 0.5rem;
+            border-radius: 5px;
+            white-space: nowrap;
+            font-size: 0.8rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        .button:hover[title]::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .lesson-buttons {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #1f1f1f;
+            padding: 1rem;
+            text-align: center;
+            color: var(--font-color);
+            font-size: 0.9rem;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        footer ul li a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            color: #028a94;
+        }
+
+        /* Animations */
+        .lesson-group {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .lesson-group.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            padding: 0.8rem 1rem;
+            background-color: var(--primary-color);
+            color: var(--font-color);
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .back-to-top:hover {
+            background-color: #028a94;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="logo"><a href="#">Young Innovators</a></div>
+        <input type="text" class="search-bar" placeholder="Search YI Curriculum ...">
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard">
+        <h1>Explore Our Young Innovators (YI) Curriculum </h1>
+
+        <!-- Character Development Group -->
+        <section class="lesson-group">
+            <h2>Character Development</h2>
+            <div class="lesson-buttons">
+                <a href="#smart-godly" class="button" title="Focuses on integrating biblical values">Smart & Godly</a>
+                <a href="#moral-smart" class="button" title="Teaches moral development">Moral-Smart</a>
+                <a href="#etiquette-smarts" class="button" title="Fosters good manners and etiquette">Etiquette-Smarts</a>
+                <a href="#poise-smart" class="button" title="Develops confidence and poise">Poise-Smart</a>
+                <a href="#work-ethics" class="button" title="Encourages strong work ethics">Work-Ethics</a>
+            </div>
+        </section>
+
+        <!-- Critical Thinking Group -->
+        <section class="lesson-group">
+            <h2>Critical Thinking</h2>
+            <div class="lesson-buttons">
+                <a href="#root-cause" class="button" title="Teaches Root Cause Analysis">Root Cause</a>
+                <a href="#case-study" class="button" title="Analyzes real-world cases">Case Study</a>
+                <a href="#solution-finder" class="button" title="Develops problem-solving skills">Solution-Finder</a>
+                <a href="#inquiry-based" class="button" title="Encourages exploration">Inquiry-Based</a>
+                <a href="#project-based" class="button" title="Focuses on real-world projects">Project-Based</a>
+                <a href="#differentiated-approach" class="button" title="Adapts learning for diverse needs">Differentiated Approach</a>
+            </div>
+        </section>
+
+        <!-- Innovation Group -->
+        <section class="lesson-group">
+            <h2>Innovation</h2>
+            <div class="lesson-buttons">
+                <a href="#innovative-spark-scamper" class="button" title="SCAMPER framework for creativity">Innovative-Spark (SCAMPER)</a>
+                <a href="#multiple-intelligence-smart" class="button" title="Leverages multiple intelligences">Multiple-Intelligence Smart</a>
+                <a href="#innovative-spark-brainwriting" class="button" title="Brainstorming through writing">Innovative-Spark (Brainwriting)</a>
+                <a href="#innovative-spark-round-robin" class="button" title="Collaborative brainstorming">Innovative-Spark (Round-Robin)</a>
+                <a href="#innovative-spark-borrowing-brilliance" class="button" title="Adapts successful ideas">Innovative-Spark (Borrowing Brilliance)</a>
+                <a href="#traditional-brainstorming" class="button" title="Classic brainstorming method">Traditional Brainstorming</a>
+                <a href="#innovation-spark-random-word" class="button" title="Creativity with random words">Innovation-Spark (Random-Word)</a>
+                <a href="#innovation-spark-analogic-thinking" class="button" title="Uses analogies for ideas">Innovation-Spark (Analogic Thinking)</a>
+            </div>
+        </section>
+
+        <!-- Technology Group -->
+        <section class="lesson-group">
+            <h2>Technology</h2>
+            <div class="lesson-buttons">
+                <a href="#tech-smarts" class="button" title="Teaches tech-focused skills">Tech-Smarts</a>
+                <a href="#ai" class="button" title="AI in education">AI</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top">↑ Top</a>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Young Innovators. All Rights Reserved.</p>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        // Add animation on scroll
+        const groups = document.querySelectorAll('.lesson-group');
+        const backToTop = document.querySelector('.back-to-top');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        groups.forEach(group => observer.observe(group));
+
+        // Show back-to-top button on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
